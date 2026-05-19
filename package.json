@@ -1,0 +1,26 @@
+{
+  "name": "middle_diplom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crazy1099-oss/graduationProject.git"
+  },
+  "keywords": [],
+  "author": "Klimenko Danil",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Crazy1099-oss/graduationProject/issues"
+  },
+  "homepage": "https://github.com/Crazy1099-oss/graduationProject#readme",
+  "devDependencies": {
+    "webpack": "^5.106.2",
+    "webpack-cli": "^7.0.2"
+  }
+}

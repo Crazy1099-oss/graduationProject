@@ -1,3 +1,3 @@
-import one from "./modules/one.js"
+import modal from "./modules/modal.js"
 
-one();
+modal();

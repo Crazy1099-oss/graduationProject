@@ -4,6 +4,10 @@ const modal = () => {
     const overlay = document.querySelector('.overlay')
     const btnClose = document.querySelector('.header-modal__close')
 
+    const btnCloseService = document.querySelector('.services-modal__close')
+    const modalServiceBtns = document.querySelectorAll('.service-button')
+    const modalWindowService = document.querySelector('.services-modal')
+
     modalWindow.style.opacity = '0'
     overlay.style.opacity = '0'
     overlay.style.transition = 'opacity 0.3s ease'
@@ -14,7 +18,6 @@ const modal = () => {
 
         requestAnimationFrame(() => {
             modalWindow.style.opacity = '1'
-
             overlay.style.opacity = '1'
         })
     }
@@ -29,9 +32,43 @@ const modal = () => {
         }, 300)
     }
 
+    const openModalService = () => {
+        modalWindowService.style.display = 'block'
+        overlay.style.display = 'block'
+
+        requestAnimationFrame(() => {
+            modalWindowService.style.opacity = '1'
+            overlay.style.opacity = '1'
+        })
+    }
+
+    const closeModalService = () => {
+        modalWindowService.style.opacity = '0'
+        overlay.style.opacity = '0'
+
+        setTimeout(() => {
+            modalWindowService.style.display = 'none'
+            overlay.style.display = 'none'
+        }, 300)
+    }
+
     btn.addEventListener('click', openModal)
-    btnClose.addEventListener('click', closeModal)
-    overlay.addEventListener('click', closeModal)
+
+    if (btnClose) {
+        btnClose.addEventListener('click', closeModal)
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', closeModal)
+    }
+
+    modalServiceBtns.forEach(btn => {
+        btn.addEventListener('click', openModalService)
+    })
+
+    if (btnCloseService) {
+        btnCloseService.addEventListener('click', closeModalService)
+    }
 }
 
 export default modal

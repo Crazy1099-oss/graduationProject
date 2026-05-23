@@ -3,9 +3,11 @@ import sliders from "./modules/sliders.js"
 import timer from "./modules/timer.js"
 import form from "./modules/form.js"
 import sertificateDocument from "./modules/sertificateDocument.js"
+import scroll from "./modules/smooth-scroll.js"
 
 modal();
 sliders();
 timer();
 form();
 sertificateDocument();
+scroll();

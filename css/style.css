@@ -942,6 +942,44 @@ p.services-image_mobile {
   top: 0;
   left: 0;
   opacity: 0;
+  transition: 0.3s;
+}
+
+.document-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.document-modal.active {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.document-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.document-modal__content {
+  position: relative;
+  z-index: 2;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
+
+.document-modal__content img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 4px;
 }
 
 .document-inner:hover .document-overlay {

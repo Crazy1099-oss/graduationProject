@@ -1,5 +1,6 @@
 const form = () => {
     document.addEventListener('DOMContentLoaded', () => {
+
         const formEl = document.querySelector('form[name="action-form"]');
 
         if (!formEl) return;
@@ -11,6 +12,9 @@ const form = () => {
 
             const fio = form.fio.value.trim();
             const phone = form.phone.value.trim();
+
+            const calcTotalEl = document.getElementById('calc-total');
+            const calcTotal = calcTotalEl ? calcTotalEl.value : '';
 
             const fioRegex = /^[A-Za-zА-Яа-яЁё\s]+$/;
             const phoneRegex = /^\+\d{1,16}$/;
@@ -33,7 +37,8 @@ const form = () => {
             const data = {
                 fio,
                 phone,
-                page: form.page.value
+                page: form.page.value,
+                calcTotal
             };
 
             fetch('https://jsonplaceholder.typicode.com/posts', {

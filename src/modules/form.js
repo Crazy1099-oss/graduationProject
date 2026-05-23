@@ -2,7 +2,8 @@ const form = () => {
     document.addEventListener('DOMContentLoaded', () => {
 
         const formEl = document.querySelector('form[name="action-form"]');
-
+        const calcTotalEl = document.getElementById('calc-total');
+        
         if (!formEl) return;
 
         formEl.addEventListener('submit', function (e) {
@@ -13,7 +14,7 @@ const form = () => {
             const fio = form.fio.value.trim();
             const phone = form.phone.value.trim();
 
-            const calcTotalEl = document.getElementById('calc-total');
+
             const calcTotal = calcTotalEl ? calcTotalEl.value : '';
 
             const fioRegex = /^[A-Za-zА-Яа-яЁё\s]+$/;
@@ -48,14 +49,14 @@ const form = () => {
                 },
                 body: JSON.stringify(data)
             })
-            .then(res => res.json())
-            .then(() => {
-                alert('Заявка отправлена!');
-                form.reset();
-            })
-            .catch(() => {
-                alert('Ошибка отправки формы');
-            });
+                .then(res => res.json())
+                .then(() => {
+                    alert('Заявка отправлена!');
+                    form.reset();
+                })
+                .catch(() => {
+                    alert('Ошибка отправки формы');
+                });
         });
     });
 };

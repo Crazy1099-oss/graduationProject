@@ -26,7 +26,6 @@ const modal = () => {
         modalWindow.style.opacity = '0'
         overlay.style.opacity = '0'
         modalWindowService.style.opacity = '0'
-        overlay.style.opacity = '0'
 
         setTimeout(() => {
             modalWindow.style.display = 'none'

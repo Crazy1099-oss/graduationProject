@@ -6,7 +6,6 @@ const calculator = () => {
         const input = document.getElementById('calc-input');
         const total = document.getElementById('calc-total');
 
-        // если калькулятора нет на странице — выходим
         if (!type || !material || !input || !total) return;
 
         input.addEventListener('input', () => {
